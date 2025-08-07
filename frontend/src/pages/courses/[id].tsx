@@ -30,9 +30,8 @@ export default function CourseDetail() {
     if (error || !data?.course) {
         return (
             <div className="text-center py-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Course not found</h2>
-                <p className="text-gray-600 mb-6">
-                    The course you're looking for doesn't exist or has been removed.
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Course not found</h2>                <p className="text-gray-600 mb-6">
+                    The course you&apos;re looking for doesn&apos;t exist or has been removed.
                 </p>
                 <Link
                     href="/"
@@ -157,9 +156,8 @@ export default function CourseDetail() {
                 </div>
 
                 {isEnrolled && (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
-                        <h3 className="text-lg font-semibold text-green-900 mb-2">
-                            You're enrolled as a {userEnrollment?.role.toLowerCase()}
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">                        <h3 className="text-lg font-semibold text-green-900 mb-2">
+                            You&apos;re enrolled as a {userEnrollment?.role.toLowerCase()}
                         </h3>
                         <p className="text-green-700">
                             {isProfessor
