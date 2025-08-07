@@ -64,9 +64,8 @@ export default function MyCourses() {
 
             {enrollments.length === 0 ? (
                 <div className="text-center py-12">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">No courses yet</h2>
-                    <p className="text-gray-600 mb-6">
-                        You haven't enrolled in any courses yet. Explore our course catalog to get started!
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">No courses yet</h2>                    <p className="text-gray-600 mb-6">
+                        You haven&apos;t enrolled in any courses yet. Explore our course catalog to get started!
                     </p>
                     <button
                         onClick={() => router.push('/')}
