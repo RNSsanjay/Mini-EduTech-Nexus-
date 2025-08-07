@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id          String       @id @default(cuid())
+  name        String
+  email       String       @unique
+  password    String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  enrollments Enrollment[]
+
+  @@map("users")
+}
+
+model Course {
+  id          String       @id @default(cuid())
+  title       String
+  description String
+  level       String       // "BEGINNER" | "INTERMEDIATE" | "ADVANCED"
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  enrollments Enrollment[]
+
+  @@map("courses")
+}
+
+model Enrollment {
+  id       String @id @default(cuid())
+  userId   String
+  courseId String
+  role     String @default("STUDENT") // "STUDENT" | "PROFESSOR"
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@map("enrollments")
+}
