@@ -157,8 +157,8 @@ export default function CourseDetail() {
 
                 {isEnrolled && (
                     <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">                        <h3 className="text-lg font-semibold text-green-900 mb-2">
-                            You&apos;re enrolled as a {userEnrollment?.role.toLowerCase()}
-                        </h3>
+                        You&apos;re enrolled as a {userEnrollment?.role.toLowerCase()}
+                    </h3>
                         <p className="text-green-700">
                             {isProfessor
                                 ? "As a professor, you can edit course content and manage enrollments."
@@ -182,8 +182,8 @@ export default function CourseDetail() {
                                         <p className="text-sm text-gray-600">{enrollment.user.email}</p>
                                     </div>
                                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${enrollment.role === 'PROFESSOR'
-                                            ? 'bg-purple-100 text-purple-800'
-                                            : 'bg-blue-100 text-blue-800'
+                                        ? 'bg-purple-100 text-purple-800'
+                                        : 'bg-blue-100 text-blue-800'
                                         }`}>
                                         {enrollment.role}
                                     </span>
